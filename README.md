@@ -8,6 +8,11 @@ OpenJ9 is an Eclipse open source JVM. It resulted from the contribution of IBM's
 
 Every JVM needs a class library, and most people don't want to build their own Java distribution. The best place to get a build of OpenJ9 is AdoptOpenJDK. This provides pre-built binaries of the OpenJDK class libraries with different JVMs.
 
+`"export JAVA_HOME=/usr" >> ~/.profile;`
+
+
+git clone https://github.com/yasmin-aumeeruddy/open-cloud-native-intro.git;
+
 Run the command: 
 
 `which java`
