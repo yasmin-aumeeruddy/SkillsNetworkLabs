@@ -4,14 +4,6 @@
 
 Have a go at developing a cloud-native microservice on a fully open source and open standards stack. Use the Eclipse MicroProfile programming model to develop a robust and flexible microservice. Deploy it to the Open Liberty server running on the Eclipse OpenJ9 JVM.  Handle microservice metrics and alerting with MicroProfile Metrics and Health.  Finally, build and run the application in a Docker container ready for deployment to your favourite cloud.
 
-### Pre-requisites
-
-To take this quick tutorial you need the following pre-requisites:
-1. A Java 8 JDK (the tutorial covers OpenJ9 but other Java distributions should work https://adoptopenjdk.net/?variant=openjdk8&jvmVariant=openj9)
-2. Apache Maven (https://maven.apache.org/)
-3. An editor with Java support (e.g. Eclipse, VS Code, IntelliJ)
-4. Docker (if you want to do the steps to build and run in a Docker container)
-
 ## Introduction
 
 Cloud-native is an approach to application development and deployment.  It's the product of a number of industry movements over the past 10-15 years - agile development practices, DevOps, Microservices and Cloud.  Cloud-native applications are developed using agile practices, use continuous integration/continuous delivery to streamline deployment, are architected around team-aligned microservices, and leverage the cloud for rapid deployment at scale.
@@ -39,13 +31,9 @@ JCL      - 687ce89 based on jdk8u152-b16)
 
 ### 2. Build a cloud-native microservice 
 
-This tutorial comes with a pre-build Microservice for you to study and extend.  Start by cloning the repository.
+This tutorial comes with a pre-build Microservice for you to study and extend.
 
-``` 
-git clone https://github.com/gcharters/open-cloud-native-intro.git
-```
-
-Inside the `open-cloud-native-intro` directory you'll see a `pom.xml` file for the maven build, a `Dockerfile` to build a docker image and a `src` directory containing the implementation.
+Inside this `open-cloud-native-intro` directory you'll see a `pom.xml` file for the maven build, a `Dockerfile` to build a docker image and a `src` directory containing the implementation.
 
 Build and run the microservice application:
 
@@ -55,7 +43,8 @@ Building the application (`mvn install`) also downloads Open Liberty from Maven 
 
 Note: you will see some warnings from the server relating to SSL configuration.  These are expected and will be addressed later.
 
-To see what the app does, open a web browser at the following URL: 
+To see what the app does, open a web browser at the following URL:
+
 <a href="http://localhost:9080/mpservice">http://localhost:9080/mpservice</a>
 
 This displays a simple web page that provides a link to the microservice.  On that page, click on the link to the greeting service.  This will call the microservice URL: 
