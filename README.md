@@ -37,13 +37,11 @@ Inside this `open-cloud-native-intro` directory you'll see a `pom.xml` file for 
 
 Build and run the microservice application:
 
-`mvn install liberty:run`
+`mvn liberty:dev`
 
-Building the application (`mvn install`) also downloads Open Liberty from Maven Central and installs it to `target/liberty`.  The build also packages the application in the `target` directory in a WAR file, called `mpservice.war` and creates a minimal runnable jar containing Open Liberty and the application, called `mpservice.jar`. The `liberty:run` command (Maven goal) starts the `mpserviceServer` server in the `target/liberty` directory.
+The goal, dev, invokes the create, install-feature, and deploy goals before starting the server. Note: This goal is designed to be executed directly from the Maven command line. To exit dev mode, press `Control-C`, or type `q` and press `Enter`.
 
-Note: you will see some warnings from the server relating to SSL configuration.  These are expected and will be addressed later.
-
-To see what the app does, open a web browser at the following URL:
+Dev mode provides three key features. Code changes are detected, recompiled, and picked up by your running server. Unit and integration tests are run on demand when you press Enter in the command terminal where dev mode is running, or optionally on every code change to give you instant feedback on the status of your code. Finally, it allows you to attach a debugger to the running server at any time to step through your code.
 
 <a href="http://localhost:9080/mpservice">http://localhost:9080/mpservice</a>
 
@@ -140,8 +138,6 @@ Edit the source server configuration: `src/main/liberty/config/server.xml` and a
     <mpMetrics authentication="false" /> 
 ```
 
-Rebuild and start the server: `mvn package liberty:run`
-
 Now when you access the metrics endpoint you will be able to access it over http and not be asked to authenticate.
 
 You should now see metrics data like this:
@@ -217,7 +213,7 @@ Edit the pom.xml file and change the greeting to `Bonjour`
     <greetingServiceGreeting>Bonjour</greetingServiceGreeting>
 </bootstrapProperties>
 ```
-Stop the server (e.g. `Ctrl-C`) and start it again: `mvn liberty:run`.
+Stop the server (e.g. `Ctrl-C`) and start it again: `mvn liberty:dev".
 
 *Note: if you trigger a rebuild, the integration test will fail as it's expecting the response message to be "Hello". However, the server will still build and run.*
 
@@ -304,10 +300,6 @@ You'll also need to add the package import for the annotation:
 import org.eclipse.microprofile.openapi.annotations.Operation;
 ```
 
-If your service is not running and your IDE does not automatically recompile the class, re-run your build and start the server:
-
-`mvn compile liberty:run`
-
 Browse the OpenAPI endpoint <a href="http://localhost:9080/openapi/">http://localhost:9080/openapi/</a>
 
 You'll see that your API now has additional documentation:
@@ -322,6 +314,7 @@ You'll see that your API now has additional documentation:
       parameters:
 ...
 ```
+Stop the server (e.g. `Ctrl-C`).
 
 There are additional annotations available to help you document the parameters and more.
 
@@ -345,7 +338,8 @@ This results in a server zip package: `target/defaultServer.zip`.  In the `usr-p
 
 #### Build and run in Docker
 
-In the directory where the `Dockerfile` is located run: `docker build -t my-demo:mpservice .`
+In the directory where the `Dockerfile` is located run:
+`docker build -t my-demo:mpservice .`
 
 If the server is already running, stop it: `mvn liberty:stop` or `Ctrl-C`
 
