@@ -180,7 +180,7 @@ The `@Timed` annotation is an example of one of a number of MicroProfile metric 
 
 Access the service endpoint to cause some application measurements to be recorded: <a href="http://localhost:9080/mpservice/greeting/hello/John%20Doe">http://localhost:9080/mpservice/greeting/hello/John%20Doe</a>.
 
-These measurement will be available at the `/metrics` endpoint, but you can also just see the applications metrics at: <a href="https://localhost:9443/metrics/application">https://localhost:9443/metrics/application</a>.
+These measurement will be available at the `/metrics` endpoint, but you can also just see the applications metrics at: <a href="https://localhost:9443/metrics/application">curl --insecure https://localhost:9443/metrics/application</a>.
 
 ### MicroProfile Config
 
