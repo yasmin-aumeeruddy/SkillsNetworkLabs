@@ -46,7 +46,9 @@ Dev mode provides three key features. Code changes are detected, recompiled, and
 <a href="http://localhost:9080/mpservice">http://localhost:9080/mpservice</a>
 
 This displays a simple web page that provides a link to the microservice.  On that page, click on the link to the greeting service.  This will call the microservice URL: 
-<a href="http://localhost:9080/mpservice/greeting/hello/John%20Doe">http://localhost:9080/mpservice/greeting/hello/John%20Doe</a>
+
+
+`curl http://localhost:9080/mpservice/greeting/hello/John%20Doe`
 
 The response should look like:
 
@@ -65,9 +67,10 @@ The tutorial code shows example use of MicroProfile Health and Metrics.
 
 #### MicroProfile Health
 
-When you started Open Liberty, it wrote out a number of available endpoints.  One of those is the health endpoint for the application: <a href="http://localhost:9080/health/">http://localhost:9080/health/</a>.
+When you started Open Liberty, it wrote out a number of available endpoints.  One of those is the health endpoint for the application:
+`curl http://localhost:9080/health/</a>`
 
-Open the health endpoint in a browser and you should see:
+You should see:
 
 ```JSON
 {
@@ -119,11 +122,11 @@ You can implement many checks as part of your service and their outcomes are agg
 
 Feel free to try each of these endpoints.  You'll see there's a default `/health/live` endpoint that always reports as `UP`.
 
-http://localhost:9080/health/ready
+`curl http://localhost:9080/health/ready`
 
-http://localhost:9080/health/live
+`curl http://localhost:9080/health/live`
 
-http://localhost:9080/health
+`curl http://localhost:9080/health`
 
 
 #### MicroProfile Metrics
@@ -178,9 +181,11 @@ public class GreetingService {
 
 The `@Timed` annotation is an example of one of a number of MicroProfile metric types.  This metric produces timing information for the execution of the `sayHello` service method.  Other metrics include counting method access to measure load, or gauges for custom measurement. 
 
-Access the service endpoint to cause some application measurements to be recorded: <a href="http://localhost:9080/mpservice/greeting/hello/John%20Doe">http://localhost:9080/mpservice/greeting/hello/John%20Doe</a>.
+Access the service endpoint to cause some application measurements to be recorded: 
+`curl http://localhost:9080/mpservice/greeting/hello/John%20Doe`
 
-These measurement will be available at the `/metrics` endpoint, but you can also just see the applications metrics at: <a href="https://localhost:9443/metrics/application">curl --insecure https://localhost:9443/metrics/application</a>.
+These measurement will be available at the `/metrics` endpoint, but you can also just see the applications metrics at: 
+`curl --insecure https://localhost:9443/metrics/application`
 
 ### MicroProfile Config
 
@@ -213,11 +218,13 @@ Edit the pom.xml file and change the greeting to `Bonjour`
     <greetingServiceGreeting>Bonjour</greetingServiceGreeting>
 </bootstrapProperties>
 ```
-Stop the server (e.g. `Ctrl-C`) and start it again: `mvn liberty:dev".
+Stop the server (e.g. `Ctrl-C`) and start it again: `mvn liberty:dev`.
 
 *Note: if you trigger a rebuild, the integration test will fail as it's expecting the response message to be "Hello". However, the server will still build and run.*
 
-Call the service again to see the greeting change: <a href="http://localhost:9080/mpservice/greeting/hello/John%20Doe">http://localhost:9080/mpservice/greeting/hello/John%20Doe</a>
+Call the service again to see the greeting change:
+
+`curl http://localhost:9080/mpservice/greeting/hello/John%20Doe`
 
 You should now see:
 
@@ -232,7 +239,11 @@ This example shows static config injection, where the configuration is read at s
 
 #### MicroProfile OpenAPI
 
-When you started Open Liberty it wrote out two endpoints for MicroProfile OpenAPI: <a href="http://localhost:9080/openapi/">http://localhost:9080/openapi/</a> and <a href="http://localhost:9080/openapi/ui/">http://localhost:9080/openapi/ui/</a>.  Clicking on the first link displays a machine-readable yaml description of the service, the format of which is defined by the <a href="https://www.openapis.org/">OpenAPI Initiative</a>.  
+When you started Open Liberty it wrote out two endpoints for MicroProfile OpenAPI:
+
+`curl http://localhost:9080/openapi/` and `curl http://localhost:9080/openapi/ui/`
+
+Clicking on the first link displays a machine-readable yaml description of the service, the format of which is defined by the <a href="https://www.openapis.org/">OpenAPI Initiative</a>.  
 
 ```YAML
 openapi: 3.0.0
@@ -345,7 +356,7 @@ If the server is already running, stop it: `mvn liberty:stop` or `Ctrl-C`
 
 Run the docker image: `docker run -p 9080:9080 -p 9443:9443 my-demo:mpservice`
 
-Because the service is running in docker you need to access it on 127.0.0.1: <a href="http://127.0.0.1:9080/mpservice/greeting/hello/John%20Doe">http://127.0.0.1:9080/mpservice/greeting/hello/John%20Doe</a>
+Access it with `curl localhost:9080/mpservice/greeting/hello/John%20Doe`
 
 Note: the `open-liberty` image referenced in the Dockerfile is based on IBM Java (built on Open J9) because we wanted to re-use the official Open Liberty Docker image. Creating an image based on Open J9 would be relatively straightforward.
 
