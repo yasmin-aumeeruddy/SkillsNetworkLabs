@@ -68,7 +68,7 @@ The tutorial code shows example use of MicroProfile Health and Metrics.
 #### MicroProfile Health
 
 When you started Open Liberty, it wrote out a number of available endpoints.  One of those is the health endpoint for the application:
-`curl http://localhost:9080/health/</a>`
+`curl http://localhost:9080/health/`
 
 You should see:
 
@@ -311,7 +311,9 @@ You'll also need to add the package import for the annotation:
 import org.eclipse.microprofile.openapi.annotations.Operation;
 ```
 
-Browse the OpenAPI endpoint <a href="http://localhost:9080/openapi/">http://localhost:9080/openapi/</a>
+Browse the OpenAPI endpoint:
+
+`curl http://localhost:9080/openapi/`
 
 You'll see that your API now has additional documentation:
 
