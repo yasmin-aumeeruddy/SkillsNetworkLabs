@@ -12,7 +12,7 @@ Cloud-native doesn't change the principles around which solutions are chosen and
 
 Before you begin, run the following command:
 
-git clone https://github.com/yasmin-aumeeruddy/SkillsNetworkLabs.git /home/project 
+`git clone https://github.com/yasmin-aumeeruddy/SkillsNetworkLabs.git /home/project `
 
 ### 1. A look at OpenJ9 and AdoptOpenJDK
 
