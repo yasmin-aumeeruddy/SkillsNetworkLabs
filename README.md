@@ -10,6 +10,10 @@ Cloud-native is an approach to application development and deployment.  It's the
 
 Cloud-native doesn't change the principles around which solutions are chosen and so often avoiding vendor lock-in is key.  Open source and open standards are essential enablers for avoiding vendors lock-in.  This quick tutorial takes you through using an Open Java Stack with Open Source and Open Standards at its heart; OpenJ9, AdoptOpenJDK, Open Liberty, MicroProfile, and Docker.
 
+Before you begin, run the following command:
+
+git clone https://github.com/yasmin-aumeeruddy/SkillsNetworkLabs.git /home/project 
+
 ### 1. A look at OpenJ9 and AdoptOpenJDK
 
 <a href="http://www.eclipse.org/openj9/">OpenJ9</a> is an Eclipse open source JVM. It resulted from the contribution of IBM's JVM implementation to Eclipse and so has many years of high-volume, high-availability production use behind it. It's low footprint, fast startup and high throughput characteristics make it an ideal choice for cloud-native applications - if you pay for your cloud by memory footprint, this is going to be important to you.
@@ -43,9 +47,11 @@ The goal, dev, invokes the create, install-feature, and deploy goals before star
 
 Dev mode provides three key features. Code changes are detected, recompiled, and picked up by your running server. Unit and integration tests are run on demand when you press Enter in the command terminal where dev mode is running, or optionally on every code change to give you instant feedback on the status of your code. Finally, it allows you to attach a debugger to the running server at any time to step through your code.
 
-<a href="http://localhost:9080/mpservice">http://localhost:9080/mpservice</a>
+In another terminal, run the following command:
 
-This displays a simple web page that provides a link to the microservice.  On that page, click on the link to the greeting service.  This will call the microservice URL: 
+`curl http://localhost:9080/mpservice `
+
+Call the microservice URL: 
 
 
 `curl http://localhost:9080/mpservice/greeting/hello/John%20Doe`
@@ -68,6 +74,7 @@ The tutorial code shows example use of MicroProfile Health and Metrics.
 #### MicroProfile Health
 
 When you started Open Liberty, it wrote out a number of available endpoints.  One of those is the health endpoint for the application:
+
 `curl http://localhost:9080/health/`
 
 You should see:
