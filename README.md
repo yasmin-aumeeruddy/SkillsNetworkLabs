@@ -69,7 +69,7 @@ The response should look like:
 
 The tutorial code shows example use of MicroProfile Health and Metrics.  
 
-#### MicroProfile Health
+### MicroProfile Health
 
 When you started Open Liberty, it wrote out a number of available endpoints.  One of those is the health endpoint for the application:
 
@@ -134,7 +134,7 @@ Feel free to try each of these endpoints.  You'll see there's a default `/health
 `curl http://localhost:9080/health`
 
 
-#### MicroProfile Metrics
+### MicroProfile Metrics
 
 When you started Open Liberty it wrote out an endpoint for MicroProfile Metrics: <a href="http://localhost:9080/metrics/">http://localhost:9080/metrics/</a>. If you tried to access the endpoint you will have found that it requires security configuration to work.  The Metrics endpoint is only available over https and, by default, also requires an authorized user in order to prevent disclosing potentially sensitive information.
 
@@ -192,7 +192,7 @@ Access the service endpoint to cause some application measurements to be recorde
 These measurement will be available at the `/metrics` endpoint, but you can also just see the applications metrics at: 
 `curl --insecure https://localhost:9443/metrics/application`
 
-#### MicroProfile Config
+### MicroProfile Config
 
 Externalizing configuration is one of the key tenets of <a href="https://12factor.net/">12-factor applications</a>. Externalizing everything that varies between deployments into configuration means you can build once and deploy in the many stages of your DEvOps pipeline, thus removing the risk of your application changing between deployments and invalidating previous testing.  
 
