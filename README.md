@@ -192,7 +192,7 @@ Access the service endpoint to cause some application measurements to be recorde
 These measurement will be available at the `/metrics` endpoint, but you can also just see the applications metrics at: 
 `curl --insecure https://localhost:9443/metrics/application`
 
-### MicroProfile Config
+#### MicroProfile Config
 
 Externalizing configuration is one of the key tenets of <a href="https://12factor.net/">12-factor applications</a>. Externalizing everything that varies between deployments into configuration means you can build once and deploy in the many stages of your DEvOps pipeline, thus removing the risk of your application changing between deployments and invalidating previous testing.  
 
