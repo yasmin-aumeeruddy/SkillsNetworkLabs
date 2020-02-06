@@ -194,7 +194,7 @@ These measurement will be available at the `/metrics` endpoint, but you can also
 
 ### MicroProfile Config
 
-Externalizing configuration is one of the key tenets of <a href="https://12factor.net/">12-factor applications</a>. Externalizing everything that varies between deployments into configuration means you can build once and deploy in the many stages of your DEvOps pipeline, thus removing the risk of your application changing between deployments and invalidating previous testing.  
+Externalizing configuration is one of the key tenets of <a href="https://12factor.net/">12-factor applications</a>. Externalizing everything that varies between deployments into configuration means you can build once and deploy in the many stages of your DevOps pipeline, thus removing the risk of your application changing between deployments and invalidating previous testing.  
 
 The tutorial application has also included the use of MicroProfile Config for injecting a configuration property using `@ConfigProperty`.  Open Liberty supports a number of `config sources`.  The tutorial shows the use of Open Liberty `bootstrap.properties`.  
 
@@ -207,7 +207,7 @@ The `pom.xml` file contains the following configuration for the greeting:
 </bootstrapProperties>
 ```
 
-The maven build puts this value in: `target/ilberty/wlp/usr/servers/mpserviceServer/bootstrap.properites`
+The maven build puts this value in: `target/liberty/wlp/usr/servers/mpserviceServer/bootstrap.properties`
 
 ```
 greetingServiceGreeting=Hello
