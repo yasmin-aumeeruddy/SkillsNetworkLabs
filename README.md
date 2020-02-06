@@ -10,9 +10,11 @@ Cloud-native is an approach to application development and deployment.  It's the
 
 Cloud-native doesn't change the principles around which solutions are chosen and so often avoiding vendor lock-in is key.  Open source and open standards are essential enablers for avoiding vendors lock-in.  This quick tutorial takes you through using an Open Java Stack with Open Source and Open Standards at its heart; OpenJ9, AdoptOpenJDK, Open Liberty, MicroProfile, and Docker.
 
-Before you begin, run the following command:
+Before you begin, run the following commands:
 
-`git clone https://github.com/yasmin-aumeeruddy/SkillsNetworkLabs.git /home/project `
+`cd home/project`
+
+`git clone https://github.com/yasmin-aumeeruddy/SkillsNetworkLabs.git`
 
 ### 1. A look at OpenJ9 and AdoptOpenJDK
 
@@ -37,7 +39,7 @@ JCL      - 687ce89 based on jdk8u152-b16)
 
 This tutorial comes with a pre-build Microservice for you to study and extend.
 
-Inside this `open-cloud-native-intro` directory you'll see a `pom.xml` file for the maven build, a `Dockerfile` to build a docker image and a `src` directory containing the implementation.
+Inside this directory, you'll see a `pom.xml` file for the maven build, a `Dockerfile` to build a docker image and a `src` directory containing the implementation.
 
 Build and run the microservice application:
 
@@ -47,11 +49,7 @@ The goal, dev, invokes the create, install-feature, and deploy goals before star
 
 Dev mode provides three key features. Code changes are detected, recompiled, and picked up by your running server. Unit and integration tests are run on demand when you press Enter in the command terminal where dev mode is running, or optionally on every code change to give you instant feedback on the status of your code. Finally, it allows you to attach a debugger to the running server at any time to step through your code.
 
-In another terminal, run the following command:
-
-`curl http://localhost:9080/mpservice `
-
-Call the microservice URL: 
+In another terminal, run the following command to call the microservice URL: 
 
 
 `curl http://localhost:9080/mpservice/greeting/hello/John%20Doe`
