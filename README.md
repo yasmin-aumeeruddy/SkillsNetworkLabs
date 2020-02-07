@@ -2,7 +2,7 @@
 
 ## Abstract
 
-Have a go at developing a cloud-native microservice on a fully open source and open standards stack. Use the Eclipse MicroProfile programming model to develop a robust and flexible microservice. Deploy it to the Open Liberty server running on the Eclipse OpenJ9 JVM.  Handle microservice metrics and alerting with MicroProfile Metrics and Health.  Finally, build and run the application in a Docker container ready for deployment to your favourite cloud.
+Have a go at developing a cloud-native microservice on a fully open source and open standards stack. Use the Eclipse MicroProfile programming model to develop a robust and flexible microservice. Deploy it to the Open Liberty server running on the Eclipse OpenJ9 JVM.  Handle microservice metrics and alerting with MicroProfile Metrics and Health.  Finally, build and run the application in a Docker container ready for deployment to your favorite cloud.
 
 ## Introduction
 
@@ -18,7 +18,8 @@ Before you begin, run the following commands:
 
 ### 1. A look at OpenJ9 and AdoptOpenJDK
 
-<a href="http://www.eclipse.org/openj9/">OpenJ9</a> is an Eclipse open source JVM. It resulted from the contribution of IBM's JVM implementation to Eclipse and so has many years of high-volume, high-availability production use behind it. It's low footprint, fast startup and high throughput characteristics make it an ideal choice for cloud-native applications - if you pay for your cloud by memory footprint, this is going to be important to you.
+<a href="http://www.eclipse.org/openj9/">OpenJ9</a> is an Eclipse open source JVM. It resulted from the contribution of IBM's JVM implementation to Eclipse and so has many years of high-volume, high-availability production use behind it. Its
+low footprint, fast startup and high throughput characteristics make it an ideal choice for cloud-native applications - if you pay for your cloud by memory footprint, this is going to be important to you.
 
 Every JVM needs a class library, and most people don't want to build their own Java distribution.  The best place to get a build of OpenJ9 is <a href="https://adoptopenjdk.net/">AdoptOpenJDK</a>.  This provides pre-built binaries of the OpenJDK class libraries with different JVMs.  The OpenJ9 + OpenJDK builds can be found here: https://adoptopenjdk.net/?variant=openjdk8-openj9 . 
 
@@ -158,9 +159,9 @@ base:classloader_total_loaded_class_count 8807
 ...
 ```
 
-The MicroProfile system metrics, for example, JVM heap, cpu, and garbage collection information, don't require any additional coding - they're produced automatically from the JVM.  The metrics data is in <a href="https://prometheus.io">Prometheus</a> format, the default for MicroProfile.  Using an `Accept` header on the request, you can also receive json format (not show in this tutorial).
+The MicroProfile system metrics, for example, JVM heap, cpu, and garbage collection information, don't require any additional coding - they're produced automatically from the JVM.  The metrics data is in <a href="https://prometheus.io">Prometheus</a> format, the default for MicroProfile.  Using an `Accept` header on the request, you can also receive json format (not shown in this tutorial).
 
-The tutorial application also shows a MicroProfile application metric in the microservice implementation: `src/main/java/my/demo/GreetingService.java`
+The tutorial application also shows a MicroProfile application metrics in the microservice implementation: `src/main/java/my/demo/GreetingService.java`
 
 ```Java
 @Path("/hello")
@@ -189,7 +190,7 @@ The `@Timed` annotation is an example of one of a number of MicroProfile metric 
 Access the service endpoint to cause some application measurements to be recorded: 
 `curl http://localhost:9080/mpservice/greeting/hello/John%20Doe`
 
-These measurement will be available at the `/metrics` endpoint, but you can also just see the applications metrics at: 
+These measurements will be available at the `/metrics` endpoint, but you can also just see the application metrics at: 
 `curl --insecure https://localhost:9443/metrics/application`
 
 ### MicroProfile Config
@@ -369,4 +370,4 @@ Note: the `open-liberty` image referenced in the Dockerfile is based on IBM Java
 
 ## Summary
 
-Congratulations, you've have built, a cloud-native application, seen how you can monitor it for health and metrics, change it's configuration, and package and run it in Docker, ready for deployment to your cloud of choice.  I recommend IBM Cloud or IBM Cloud Private, of course ;)
+Congratulations, you have built, a cloud-native application, seen how you can monitor it for health and metrics, change its configuration, and package and run it in Docker, ready for deployment to your cloud of choice.  I recommend IBM Cloud or IBM Cloud Private, of course ;)
