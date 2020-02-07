@@ -359,7 +359,9 @@ The tutorial includes a Dockerfile for building a docker image for the Microserv
 
 By default the `pom.xml` builds a 'fat jar': `target/mpservice.jar` so we need to build a different package that only includes the server configuration and application (not the server runtime) - a `usr` server package.
 
-The project's maven pom file includes a maven profile for building a usr package, which isn't built by default.  Build the usr server package with: `mvn -P usr-package install`
+The project's maven pom file includes a maven profile for building a usr package, which isn't built by default.  Build the usr server package with: 
+
+`mvn -P usr-package install`
 
 This results in a server zip package: `target/defaultServer.zip`.  In the `usr-package` build we also use the name `defaultServer` for the server because this is the name of the server the base Liberty Docker images automatically runs when the container is started.
 
