@@ -17,7 +17,7 @@ Before you begin, run the following commands:
 `git clone https://github.com/yasmin-aumeeruddy/SkillsNetworkLabs.git`
 
 
-`cd SkillsNetworkLabs
+`cd SkillsNetworkLabs`
 
 ### 1. A look at OpenJ9 and AdoptOpenJDK
 
