@@ -216,7 +216,7 @@ greetingServiceGreeting=Hello
 
 This file is read at server startup and the value injected into the GreetingService bean when it is created.
 
-Edit the pom.xml file and change the greeting to `Bonjour`
+Edit line 100 of the pom.xml file and change the greeting to `Bonjour`
 
 ```XML
 <bootstrapProperties>
