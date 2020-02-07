@@ -141,7 +141,11 @@ Feel free to try each of these endpoints.  You'll see there's a default `/health
 
 ### MicroProfile Metrics
 
-When you started Open Liberty it wrote out an endpoint for MicroProfile Metrics: <a href="http://localhost:9080/metrics/">http://localhost:9080/metrics/</a>. If you tried to access the endpoint you will have found that it requires security configuration to work.  The Metrics endpoint is only available over https and, by default, also requires an authorized user in order to prevent disclosing potentially sensitive information.
+When you started Open Liberty it wrote out an endpoint for MicroProfile Metrics:
+
+`curl http://localhost:9080/metrics/`
+
+If you tried to access the endpoint you will have found that it requires security configuration to work.  The Metrics endpoint is only available over https and, by default, also requires an authorized user in order to prevent disclosing potentially sensitive information.
 
 The MicroProfile Metrics feature allows you to turn off the security requirements.  This makes it easier to test out Metrics, but is not intended for production systems.
 
