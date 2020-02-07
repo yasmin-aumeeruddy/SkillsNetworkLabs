@@ -368,6 +368,7 @@ This results in a server zip package: `target/defaultServer.zip`.  In the `usr-p
 ### Build and run in Docker
 
 In the directory where the `Dockerfile` is located run:
+
 `docker build -t my-demo:mpservice .`
 
 To see the image that you created, run the following command:
