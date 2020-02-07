@@ -370,13 +370,31 @@ This results in a server zip package: `target/defaultServer.zip`.  In the `usr-p
 In the directory where the `Dockerfile` is located run:
 `docker build -t my-demo:mpservice .`
 
+To see the image that you created, run the following command:
+`docker images`
+
 If the server is already running, stop it: `mvn liberty:stop` or `Ctrl-C`
 
-Run the docker image: `docker run -p 9080:9080 -p 9443:9443 my-demo:mpservice`
+Run the docker image: 
+
+`docker run -d --name mpservice -p 9080:9080 -p 9443:9443 my-demo:mpservice`
+
+To see the docker container that is running, use the following command in another terminal: 
+
+`docker ps`
 
 Access it with `curl localhost:9080/mpservice/greeting/hello/John%20Doe`
 
+
 Note: the `open-liberty` image referenced in the Dockerfile is based on IBM Java (built on Open J9) because we wanted to re-use the official Open Liberty Docker image. Creating an image based on Open J9 would be relatively straightforward.
+
+To stop and remove the container, run the following command:
+
+`docker stop mpservice && docker rm mpservice`
+
+To remove the image, run the following command:
+
+`docker rmi my-demo:mpservice`
 
 ## Summary
 
