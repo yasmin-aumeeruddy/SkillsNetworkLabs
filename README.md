@@ -341,7 +341,7 @@ You'll see that your API now has additional documentation:
       parameters:
 ...
 ```
-Stop the server (e.g. `Ctrl-C`).
+Stop the serverby entering `q` in the terminal. 
 
 There are additional annotations available to help you document the parameters and more.
 
