@@ -27,13 +27,14 @@ In a terminal, type: `which java`
 
 To find out more about the Java you have installed, type: `java -version`
 
+You should see something like the following:
 ```
-openjdk version "1.8.0-internal"
-OpenJDK Runtime Environment (build 1.8.0-internal-jenkins_2018_01_30_13_02-b00)
-Eclipse OpenJ9 VM (build 2.9, JRE 1.8.0 Linux amd64-64 Compressed References 20180130_57 (JIT enabled, AOT enabled)
-OpenJ9   - 8f03f71
-OMR      - f410d65
-JCL      - 687ce89 based on jdk8u152-b16)
+openjdk version "11.0.6" 2020-01-14
+OpenJDK Runtime Environment AdoptOpenJDK (build 11.0.6+10)
+Eclipse OpenJ9 VM AdoptOpenJDK (build openj9-0.18.1, JRE 11 Linux amd64-64-Bit Compressed References 20200122_441 (JIT enabled, AOT enabled)
+OpenJ9   - 51a5857d2
+OMR      - 7a1b0239a
+JCL      - da35e0c380 based on jdk-11.0.6+10)
 ```
 
 ### 2. Build a cloud-native microservice 
