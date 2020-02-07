@@ -141,7 +141,7 @@ When you started Open Liberty it wrote out an endpoint for MicroProfile Metrics:
 
 The MicroProfile Metrics feature allows you to turn off the security requirements.  This makes it easier to test out Metrics, but is not intended for production systems.
 
-Edit the source server configuration: `src/main/liberty/config/server.xml` and add the following line:
+Edit the source server configuration in the `src/main/liberty/config/server.xml` file. This can be opened from the root folder of the repo `/home/project/SkillsNetworkLabs` by opening the file via `File` > `Open`. Add the following line:
 
 ```XML
     <mpMetrics authentication="false" /> 
