@@ -12,7 +12,7 @@ Cloud-native doesn't change the principles around which solutions are chosen and
 
 Before you begin, run the following commands:
 
-`cd home/project`
+`cd /home/project`
 
 `git clone https://github.com/yasmin-aumeeruddy/SkillsNetworkLabs.git`
 
