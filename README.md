@@ -16,6 +16,9 @@ Before you begin, run the following commands:
 
 `git clone https://github.com/yasmin-aumeeruddy/SkillsNetworkLabs.git`
 
+
+`cd SkillsNetworkLabs
+
 ### 1. A look at OpenJ9 and AdoptOpenJDK
 
 <a href="http://www.eclipse.org/openj9/">OpenJ9</a> is an Eclipse open source JVM. It resulted from the contribution of IBM's JVM implementation to Eclipse and so has many years of high-volume, high-availability production use behind it. Its
