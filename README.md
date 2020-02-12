@@ -232,7 +232,7 @@ Edit line 100 of the pom.xml file which is situated in the SkillsNetworkLabs fol
     <greetingServiceGreeting>Bonjour</greetingServiceGreeting>
 </bootstrapProperties>
 ```
-Stop the server (e.g. `Ctrl-C`) and start it again: `mvn liberty:dev`.
+Stop the server by entering `q` in the terminal and start it again: `mvn liberty:dev`.
 
 *Note: if you trigger a rebuild, the integration test will fail as it's expecting the response message to be "Hello". However, the server will still build and run.*
 
@@ -341,7 +341,7 @@ You'll see that your API now has additional documentation:
       parameters:
 ...
 ```
-Stop the server by pressing `ctrl-c`.
+Stop the server by entering `q` in the terminal. 
 
 There are additional annotations available to help you document the parameters and more.
 
@@ -376,7 +376,7 @@ In the directory where the `Dockerfile` is located run:
 To see the image that you created, run the following command:
 `docker images`
 
-If the server is already running, stop it: `mvn liberty:stop` or `Ctrl-C`
+If the server is already running, stop it: `mvn liberty:stop` or enter `q` in the terminal.
 
 Run the docker image: 
 
