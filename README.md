@@ -341,7 +341,7 @@ You'll see that your API now has additional documentation:
       parameters:
 ...
 ```
-Stop the serverby entering `q` in the terminal. 
+Stop the server by pressing `ctrl-c`.
 
 There are additional annotations available to help you document the parameters and more.
 
@@ -358,6 +358,8 @@ The tutorial includes a Dockerfile for building a docker image for the Microserv
 ### Build a usr server package
 
 By default the `pom.xml` builds a 'fat jar': `target/mpservice.jar` so we need to build a different package that only includes the server configuration and application (not the server runtime) - a `usr` server package.
+
+Change the value of line 100 in the `pom.xml` file back to "hello". 
 
 The project's maven pom file includes a maven profile for building a usr package, which isn't built by default.  Build the usr server package with: 
 
