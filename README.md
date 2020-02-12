@@ -10,7 +10,7 @@ Cloud-native is an approach to application development and deployment.  It's the
 
 Cloud-native doesn't change the principles around which solutions are chosen and so often avoiding vendor lock-in is key.  Open source and open standards are essential enablers for avoiding vendors lock-in.  This quick tutorial takes you through using an Open Java Stack with Open Source and Open Standards at its heart; OpenJ9, AdoptOpenJDK, Open Liberty, MicroProfile, and Docker.
 
-Before you begin, run the following commands:
+Before you begin, open a Terminal via 'Terminal -> New Terminal' and run the following commands:
 
 `cd /home/project`
 
