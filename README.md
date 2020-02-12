@@ -10,7 +10,7 @@ Cloud-native is an approach to application development and deployment.  It's the
 
 Cloud-native doesn't change the principles around which solutions are chosen and so often avoiding vendor lock-in is key.  Open source and open standards are essential enablers for avoiding vendors lock-in.  This quick tutorial takes you through using an Open Java Stack with Open Source and Open Standards at its heart; OpenJ9, AdoptOpenJDK, Open Liberty, MicroProfile, and Docker.
 
-Before you begin, open a Terminal via 'Terminal -> New Terminal' and run the following commands:
+Before you begin, open a Terminal via 'Terminal' -> 'New Terminal' and run the following commands:
 
 `cd /home/project`
 
@@ -224,7 +224,7 @@ greetingServiceGreeting=Hello
 
 This file is read at server startup and the value injected into the GreetingService bean when it is created.
 
-Edit line 100 of the pom.xml file and change the greeting to `Bonjour`
+Edit line 100 of the pom.xml file which is situated in the SkillsNetworkLabs folder and change the greeting to `Bonjour`
 
 ```XML
 <bootstrapProperties>
@@ -301,7 +301,7 @@ The second link is to a web page that gives a human-readable representation of t
 
 The machine-readable and Web page API descriptions are created automatically from the JAX-RS definition with no additional work required.  As a result, the information provided for your service is pretty basic.  One of the things MicroProfile OpenAPI provides is a number of annotations to enable you to provide better API documentation.
 
-Edit the `src/main/java/my/demo/GreetingService.java` to add documentation for the operation using the @Operation annotation:
+Edit the `src/main/java/my/demo/GreetingService.java` to add documentation for the operation using the @Operation annotation on line 45:
 
 ```Java
    ...
