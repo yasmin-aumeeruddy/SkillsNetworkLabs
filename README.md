@@ -19,7 +19,7 @@ Before you begin, open a Terminal via 'Terminal' -> 'New Terminal' and run the f
 
 `cd SkillsNetworkLabs`
 
-### 1. A look at OpenJ9 and AdoptOpenJDK
+## A look at OpenJ9 and AdoptOpenJDK
 
 <a href="http://www.eclipse.org/openj9/">OpenJ9</a> is an Eclipse open source JVM. It resulted from the contribution of IBM's JVM implementation to Eclipse and so has many years of high-volume, high-availability production use behind it. Its
 low footprint, fast startup and high throughput characteristics make it an ideal choice for cloud-native applications - if you pay for your cloud by memory footprint, this is going to be important to you.
@@ -40,7 +40,7 @@ OMR      - 7a1b0239a
 JCL      - da35e0c380 based on jdk-11.0.6+10)
 ```
 
-### 2. Build a cloud-native microservice 
+## Build a cloud-native microservice 
 
 This tutorial comes with a pre-build Microservice for you to study and extend.
 
@@ -68,7 +68,7 @@ The response should look like:
 }
 ```
 
-### 3. A look at MicroProfile
+## A look at MicroProfile
 
 <a href="http://microprofile.io">MicroProfile</a> is a set of industry specifications for developing Cloud-native applications. At its foundation are a small number of Java EE specifications; JAX-RS, CDI and JSON-P, which are then augmented with technologies addressing the needs of Cloud-native applications.  
 
@@ -349,13 +349,13 @@ There are additional annotations available to help you document the parameters a
 
 MicroProfile has many other important capabilities, such as a type-safe REST client, and fault tolerance (the ability to gracefully handle failures in service dependencies).  Visit the <a href="https://openliberty.io/guides/?search=MicroProfile&key=tag">Open Liberty MicroProfile Guides</a> for more details and deeper dives into what we've covered here.
 
-### 5. Containerization (Docker)
+## Containerization (Docker)
 
 Docker has rapidly become the containerization technology of choice for deploying cloud-native applications. All major cloud vendors support Docker, including IBM Cloud and IBM Cloud Private. 
 
 The tutorial includes a Dockerfile for building a docker image for the Microservice.  This Dockerfile is based on the Open Liberty docker image from Docker Hub and adds in the project's server configuration and application from an Open Liberty 'usr server package'.  A usr server package only contains an application and server configuration and is designed to be unzipped over an existing Open Liberty installation (such as the one on the Liberty Docker image).  The advantage of this approach over putting a 'fat jar' (an option supported by Liberty as well as Spring Boot) which contains a lot of infrastructure code, in a docker container, is Docker will cache the pre-req infrastructure layers (e.g. Open Liberty, Java, etc) which makes building and deploying much faster.
 
-### Build a usr server package
+## Build a usr server package
 
 By default the `pom.xml` builds a 'fat jar': `target/mpservice.jar` so we need to build a different package that only includes the server configuration and application (not the server runtime) - a `usr` server package.
 
@@ -367,7 +367,7 @@ The project's maven pom file includes a maven profile for building a usr package
 
 This results in a server zip package: `target/defaultServer.zip`.  In the `usr-package` build we also use the name `defaultServer` for the server because this is the name of the server the base Liberty Docker images automatically runs when the container is started.
 
-### Build and run in Docker
+## Build and run in Docker
 
 In the directory where the `Dockerfile` is located run:
 
@@ -399,6 +399,6 @@ To remove the image, run the following command:
 
 `docker rmi my-demo:mpservice`
 
-### Summary
+## Well done
 
 Congratulations, you have built, a cloud-native application, seen how you can monitor it for health and metrics, change its configuration, and package and run it in Docker, ready for deployment to your cloud of choice.  I recommend IBM Cloud or IBM Cloud Private, of course ;)
