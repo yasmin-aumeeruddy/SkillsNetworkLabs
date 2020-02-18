@@ -1,6 +1,6 @@
 ## Get started with cloud-native on the open Java stack 
 
-### Abstract
+### What you will learn
 
 Have a go at developing a cloud-native microservice on a fully open source and open standards stack. Use the Eclipse MicroProfile programming model to develop a robust and flexible microservice. Deploy it to the Open Liberty server running on the Eclipse OpenJ9 JVM.  Handle microservice metrics and alerting with MicroProfile Metrics and Health.  Finally, build and run the application in a Docker container ready for deployment to your favorite cloud.
 
