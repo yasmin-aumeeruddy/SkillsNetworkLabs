@@ -90,7 +90,6 @@
                         <type>zip</type>
                     </assemblyArtifact>
                     <serverName>${server.name}Server</serverName>
-                    <configFile>src/main/liberty/config/server.xml</configFile>
                     <packageType>${package.type}</packageType>
                     <packageName>${package.name}</packageName>
                     <include>${package.include}</include>
