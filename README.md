@@ -54,11 +54,7 @@ Inside this directory, you'll see a `pom.xml` file for the maven build, a `Docke
 
 Build and run the microservice application:
 
-`mvn liberty:dev`
-
-The goal, dev, invokes the create, install-feature, and deploy goals before starting the server. Note: This goal is designed to be executed directly from the Maven command line. To exit dev mode, press `Control-C`, or type `q` and press `Enter`.
-
-Dev mode provides three key features. Code changes are detected, recompiled, and picked up by your running server. Unit and integration tests are run on demand when you press Enter in the command terminal where dev mode is running, or optionally on every code change to give you instant feedback on the status of your code. Finally, it allows you to attach a debugger to the running server at any time to step through your code.
+`mvn liberty:run`
 
 In another terminal, run the following command to call the microservice URL: 
 
@@ -72,6 +68,7 @@ The response should look like:
     "name": "John Doe"
 }
 ```
+Stop the server by entering `CTRL+C`
 
 ## A look at MicroProfile
 
@@ -80,6 +77,14 @@ The response should look like:
 The tutorial code shows example use of MicroProfile Health and Metrics.  
 
 ### MicroProfile Health
+
+Start the server again with the following command:
+
+`mvn liberty:dev`
+
+The goal, dev, invokes the create, install-feature, and deploy goals before starting the server. Note: This goal is designed to be executed directly from the Maven command line. To exit dev mode, press `Control-C`, or type `q` and press `Enter`.
+
+Dev mode provides three key features. Code changes are detected, recompiled, and picked up by your running server. Unit and integration tests are run on demand when you press Enter in the command terminal where dev mode is running, or optionally on every code change to give you instant feedback on the status of your code. Finally, it allows you to attach a debugger to the running server at any time to step through your code.
 
 When you started Open Liberty, it wrote out a number of available endpoints.  One of those is the health endpoint for the application:
 
