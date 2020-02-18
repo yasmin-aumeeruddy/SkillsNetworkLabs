@@ -399,6 +399,6 @@ To remove the image, run the following command:
 
 `docker rmi my-demo:mpservice`
 
-## Summary
+### Summary
 
 Congratulations, you have built, a cloud-native application, seen how you can monitor it for health and metrics, change its configuration, and package and run it in Docker, ready for deployment to your cloud of choice.  I recommend IBM Cloud or IBM Cloud Private, of course ;)
