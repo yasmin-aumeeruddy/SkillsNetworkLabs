@@ -1,10 +1,10 @@
-# Get started with cloud-native on the open Java stack 
+## Get started with cloud-native on the open Java stack 
 
-## Abstract
+### Abstract
 
 Have a go at developing a cloud-native microservice on a fully open source and open standards stack. Use the Eclipse MicroProfile programming model to develop a robust and flexible microservice. Deploy it to the Open Liberty server running on the Eclipse OpenJ9 JVM.  Handle microservice metrics and alerting with MicroProfile Metrics and Health.  Finally, build and run the application in a Docker container ready for deployment to your favorite cloud.
 
-## Introduction
+### Introduction
 
 Cloud-native is an approach to application development and deployment.  It's the product of a number of industry movements over the past 10-15 years - agile development practices, DevOps, Microservices and Cloud.  Cloud-native applications are developed using agile practices, use continuous integration/continuous delivery to streamline deployment, are architected around team-aligned microservices, and leverage the cloud for rapid deployment at scale.
 
@@ -251,7 +251,7 @@ You should now see:
 
 This example shows static config injection, where the configuration is read at server start-up.  MicroProfile and Open Liberty also support dynamic configuration injection which means the configuration is re-read periodically (e.g. every 500ms) and so does not require a server restart.
 
-#### MicroProfile OpenAPI
+### MicroProfile OpenAPI
 
 When you started Open Liberty it wrote out two endpoints for MicroProfile OpenAPI:
 
