@@ -10,12 +10,17 @@ Cloud-native is an approach to application development and deployment.  It's the
 
 Cloud-native doesn't change the principles around which solutions are chosen and so often avoiding vendor lock-in is key.  Open source and open standards are essential enablers for avoiding vendors lock-in.  This quick tutorial takes you through using an Open Java Stack with Open Source and Open Standards at its heart; OpenJ9, AdoptOpenJDK, Open Liberty, MicroProfile, and Docker.
 
-Before you begin, open a Terminal via 'Terminal' -> 'New Terminal' and run the following commands:
+If a terminal window does not open navigate:
 
-`cd /home/project`
+`Terminal -> New Terminal`
+
+Check you are in the `home/project` folder:
+
+`pwd`
+
+The fastest way to work through this guide is to clone the Git repository and use the projects that are provided inside:
 
 `git clone https://github.com/yasmin-aumeeruddy/SkillsNetworkLabs.git`
-
 
 `cd SkillsNetworkLabs`
 
@@ -31,6 +36,7 @@ In a terminal, type: `which java`
 To find out more about the Java you have installed, type: `java -version`
 
 You should see something like the following:
+
 ```
 openjdk version "11.0.6" 2020-01-14
 OpenJDK Runtime Environment AdoptOpenJDK (build 11.0.6+10)
@@ -55,7 +61,6 @@ The goal, dev, invokes the create, install-feature, and deploy goals before star
 Dev mode provides three key features. Code changes are detected, recompiled, and picked up by your running server. Unit and integration tests are run on demand when you press Enter in the command terminal where dev mode is running, or optionally on every code change to give you instant feedback on the status of your code. Finally, it allows you to attach a debugger to the running server at any time to step through your code.
 
 In another terminal, run the following command to call the microservice URL: 
-
 
 `curl http://localhost:9080/mpservice/greeting/hello/John%20Doe`
 
@@ -149,7 +154,11 @@ If you tried to access the endpoint you will have found that it requires securit
 
 The MicroProfile Metrics feature allows you to turn off the security requirements.  This makes it easier to test out Metrics, but is not intended for production systems.
 
-Edit the source server configuration in the `src/main/liberty/config/server.xml` file. This can be opened from the root folder of the repo `/home/project/SkillsNetworkLabs` by opening the file via `File` > `Open`. Add the following line:
+Edit the `server.xml`:
+
+`[File -> Open] SkillsNetworkLabs/src/main/liberty/config/server.xml`  
+
+Add the following line:
 
 ```XML
     <mpMetrics authentication="false" /> 
@@ -169,7 +178,11 @@ base:classloader_total_loaded_class_count 8807
 
 The MicroProfile system metrics, for example, JVM heap, cpu, and garbage collection information, don't require any additional coding - they're produced automatically from the JVM.  The metrics data is in <a href="https://prometheus.io">Prometheus</a> format, the default for MicroProfile.  Using an `Accept` header on the request, you can also receive json format (not shown in this tutorial).
 
-The tutorial application also shows a MicroProfile application metrics in the microservice implementation: `src/main/java/my/demo/GreetingService.java`
+The tutorial application also shows a MicroProfile application metrics in the microservice implementation. 
+
+Open the `GreetingService.java`:
+
+`[File -> Open] SkillsNetworkLabs/src/main/java/my/demo/GreetingService.java`
 
 ```Java
 @Path("/hello")
@@ -196,9 +209,11 @@ public class GreetingService {
 The `@Timed` annotation is an example of one of a number of MicroProfile metric types.  This metric produces timing information for the execution of the `sayHello` service method.  Other metrics include counting method access to measure load, or gauges for custom measurement. 
 
 Access the service endpoint to cause some application measurements to be recorded: 
+
 `curl http://localhost:9080/mpservice/greeting/hello/John%20Doe`
 
 These measurements will be available at the `/metrics` endpoint, but you can also just see the application metrics at: 
+
 `curl --insecure https://localhost:9443/metrics/application`
 
 ### MicroProfile Config
